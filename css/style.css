@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav ul {
   padding: 0;
-  margin: .4em 0 0 0;
+  margin: .2em 0 0 0;
 }
 .gtco-nav ul li {
   padding: 0;
@@ -290,7 +290,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-cover {
-  height: 900px;
+  height: 700px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-cover .display-t,
 .gtco-cover .display-tc {
-  height: 900px;
+  height: 700px;
   display: table;
   width: 100%;
 }
@@ -932,7 +932,7 @@ form label {
 }
 
 .gtco-section {
-  padding: 7em 0;
+  padding: 4em 0;
   clear: both;
   position: relative;
 }
