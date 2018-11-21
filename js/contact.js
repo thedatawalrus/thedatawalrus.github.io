@@ -4,14 +4,14 @@ function submitToAPI() {
 
             var Namere = /[A-Za-z]{1}[A-Za-z]/;
             if (!Namere.test($("#name").val())) {
-                         alert ("Name can not less than 2 char");
+                         alert ("Name can not be less than 2 characters");
                 return;
             }
-            var mobilere = /[0-9]{10}/;
-            if (!mobilere.test($("#phone").val())) {
-                alert ("Please enter valid mobile number");
-                return;
-            }
+            // var mobilere = /[0-9]{10}/;
+            // if (!mobilere.test($("#phone").val())) {
+            //     alert ("Please enter a valid mobile number");
+            //     return;
+            // }
             if ($("#email").val()=="") {
                 alert ("Please enter your email id");
                 return;
@@ -19,7 +19,7 @@ function submitToAPI() {
 
             var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
             if (!reeamil.test($("#email").val())) {
-                alert ("Please enter valid email address");
+                alert ("Please enter a valid email address");
                 return;
             }
 
