@@ -45,8 +45,8 @@ function submitToAPI() {
          
          success: function () {
            // clear form and show a success message
-           alert("Successfull");
-           document.getElementById("contact").reset();
+           alert("Successful");
+           document.getElementById("#contact").reset();
        location.reload();
          },
          error: function () {
