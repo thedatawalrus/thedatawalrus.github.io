@@ -77,12 +77,22 @@
 				$('body').removeClass('overflow offcanvas');
 			} else {
 				$('body').addClass('overflow offcanvas');
+				
+				$('body').on('click', '#gtco-offcanvas', function(event){
+
+					$('body').removeClass('overflow offcanvas');				
+					$this.toggleClass('active');
+				});
 			}
 			$this.toggleClass('active');
 			event.preventDefault();
 
 		});
+
+		
+
 	};
+
 
 
 
