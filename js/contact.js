@@ -51,6 +51,6 @@ function submitToAPI() {
          },
          error: function () {
            // show an error message
-           alert("UnSuccessfull");
+           alert("Unsuccessful");
          }});
      }
