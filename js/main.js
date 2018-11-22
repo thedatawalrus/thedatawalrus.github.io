@@ -88,7 +88,7 @@
 					$('body').removeClass('overflow offcanvas');				
 					$this.toggleClass('active');
 				} else {
-					
+
 				}
 					
 				});
@@ -360,6 +360,21 @@
 		}
 	};
 
+
+	// var contactClick = function() {
+
+	// 	$('#name').on('click', function(event){
+
+	// 		if ( $('#nameAlert').hasClass('hidden') ) {
+				
+	// 		} else {
+
+	// 			$('#nameAlert').addClass('hidden');
+	// 		}
+	// 	})
+	// };
+
+
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -373,6 +388,7 @@
 		loaderPage();
 		counterWayPoint();
 		changeWayPoint();
+		// contactClick();
 	});
 
 
