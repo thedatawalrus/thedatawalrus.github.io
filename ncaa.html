@@ -10,6 +10,7 @@
 
 	  gtag('config', 'UA-109021571-1');
 	</script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,38 @@
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/walrus2.ico">
     <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/blog.css">
+					<script src="assets/js/d3.v3.js"></script>
+					<style type="text/css">
+								.axis { 
+								  font: 16px sans-serif; 
+								  fill: #828282;
+								}
+								
+								.axis path,
+								.axis line {
+								  fill: none;
+								  stroke: #828282;
+								  shape-rendering: crispEdges;
+								}
+
+								rect { 
+								  opacity: .7;
+								}
+								.line {
+								  opacity: .3
+								}
+
+								.dot {
+								  opacity: .3
+								}
+
+								.dot:hover {
+								  stroke-opacity: 1;
+								  stroke-width: 4;
+								  stroke: #e31a1c;
+								}
+					</style>
 
     <title>Data Walrus - A shadow of a doubt</title>
 
@@ -103,41 +136,35 @@
 
 					<p>The cool thing about all this data is it can actually be useful for your office bracket pool! The first chart on average seed by round gives you an idea of what the landscape should be. The seed distribution helps identify some matchups that may be possible upsets. So, if you'll excuse me, I'm off to fill out my bracket at the last minute.</p>
 
-					<p>-DW</p> | <link rel="stylesheet" type="text/css" href="assets/css/blog.css">
-					<script src="./assets/js/d3.v3.js"></script>
-					<style type="text/css">
-								.axis { 
-								  font: 16px sans-serif; 
-								  fill: #828282;
-								}
-								
-								.axis path,
-								.axis line {
-								  fill: none;
-								  stroke: #828282;
-								  shape-rendering: crispEdges;
-								}
+					<p>-DW</p>
 
-								rect { 
-								  opacity: .7;
-								}
-								.line {
-								  opacity: .3
-								}
+					<div id="disqus_thread"></div>
+					<script>
 
-								.dot {
-								  opacity: .3
-								}
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
-								.dot:hover {
-								  stroke-opacity: 1;
-								  stroke-width: 4;
-								  stroke: #e31a1c;
-								}
-					</style>
+					var disqus_config = function () {
+					this.page.url = www.datawalrus.co/exoplanet_post.html;  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = exoplanet; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
 
-	</div>
-	
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://datawalrus.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /white -->
+
 	<div id="includedFooter"></div>
 	
 
