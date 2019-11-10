@@ -23,14 +23,6 @@
 			    w = 960 - margin.left - margin.right,
 			    h = 500 - margin.top - margin.bottom;
 
-			var xScale = d3.scale.ordinal()
-							.domain(d3.range(1,data.SecondRound.length+1))
-							.rangeBands([0, w], 0.4);
-
-			var yScale = d3.scale.linear()
-							.domain([0,d3.max(data.SecondRound, function(d) { return +d.Percent; })])
-							// .domain([0,1])
-							.range([h, 0]);
 			
 			var xAxis = d3.svg.axis()
 			    .scale(xScale)
@@ -59,10 +51,6 @@
 			.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-			var color = d3.scale.linear()
-              .domain(d3.range(data.SecondRound.length))
-              .range(["#74363E","#643F4B"])
-              ;
 
 
 			var div = d3.select("body").append("div") 
@@ -72,6 +60,21 @@
 
 d3.json("ncaa_dist.json", function(error, data) {
   if (error) throw error;
+
+			var xScale = d3.scale.ordinal()
+							.domain(d3.range(1,data.SecondRound.length+1))
+							.rangeBands([0, w], 0.4);
+
+			var yScale = d3.scale.linear()
+							.domain([0,d3.max(data.SecondRound, function(d) { return +d.Percent; })])
+							// .domain([0,1])
+							.range([h, 0]);
+
+  			var color = d3.scale.linear()
+              .domain(d3.range(data.SecondRound.length))
+              .range(["#74363E","#643F4B"])
+              ;
+
 
 		  svg.append("g")
 		      .attr("class", "x axis")
