@@ -1,16 +1,16 @@
-			var dataset = (function () {
-			    var json = null;
-			    $.ajax({
-			        'async': false,
-			        'global': false,
-			        'url': "ncaa_dist.json",
-			        'dataType': "json",
-			        'success': function (data) {
-			          json = data;
-			        }
-			    });
-			    return json;
-			})(); 
+			// var dataset = (function () {
+			//     var json = null;
+			//     $.ajax({
+			//         'async': false,
+			//         'global': false,
+			//         'url': "ncaa_dist.json",
+			//         'dataType': "json",
+			//         'success': function (data) {
+			//           json = data;
+			//         }
+			//     });
+			//     return json;
+			// })(); 
 
 			
 
@@ -24,11 +24,11 @@
 			    h = 500 - margin.top - margin.bottom;
 
 			var xScale = d3.scale.ordinal()
-							.domain(d3.range(1,dataset.data.SecondRound.length+1))
+							.domain(d3.range(1,data.SecondRound.length+1))
 							.rangeBands([0, w], 0.4);
 
 			var yScale = d3.scale.linear()
-							.domain([0,d3.max(dataset.data.SecondRound, function(d) { return +d.Percent; })])
+							.domain([0,d3.max(data.SecondRound, function(d) { return +d.Percent; })])
 							// .domain([0,1])
 							.range([h, 0]);
 			
@@ -60,7 +60,7 @@
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 			var color = d3.scale.linear()
-              .domain(d3.range(dataset.data.SecondRound.length))
+              .domain(d3.range(data.SecondRound.length))
               .range(["#74363E","#643F4B"])
               ;
 
@@ -69,6 +69,9 @@
               .attr("class", "viztooltip")        
               .style("opacity", 0);
 
+
+d3.json("ncaa_dist.json", function(error, data) {
+  if (error) throw error;
 
 		  svg.append("g")
 		      .attr("class", "x axis")
@@ -96,7 +99,7 @@
 
 			//Create bars
 			svg.selectAll("rect")
-			   .data(dataset.data.SecondRound)
+			   .data(data.SecondRound)
 			   .enter()
 			   .append("rect")
 			   .attr("x", function(d) {
@@ -205,15 +208,15 @@
 					var data;
 
 					if(round == "Second Round"){
-						data = dataset.data.SecondRound;
+						data = data.SecondRound;
 					}else if(round == "Sweet 16"){
-						data = dataset.data.Sweet16;
+						data = data.Sweet16;
 					}else if(round == "Elite Eight"){
-						data = dataset.data.EliteEight;
+						data = data.EliteEight;
 					}else if(round == "Final Four"){
-						data = dataset.data.FinalFour;
+						data = data.FinalFour;
 					}else{
-						data = dataset.data.NationalChampionship;
+						data = data.NationalChampionship;
 					}
 
 
@@ -354,4 +357,5 @@
 					   .call(yAxis);
 
 					   				
-				});
+				})
+		});
