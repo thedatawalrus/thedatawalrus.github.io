@@ -3,7 +3,7 @@
 			    $.ajax({
 			        'async': false,
 			        'global': false,
-			        'url': "/static/datawalrus/data/ncaa_dist.json",
+			        'url': "ncaa_dist.json",
 			        'dataType': "json",
 			        'success': function (data) {
 			          json = data;
