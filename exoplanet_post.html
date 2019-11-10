@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109021571-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109021571-1');
+	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Data Walrus - Exoplanets</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- <script type="text/javascript" src="../d3/d3.v3.js"></script> -->
+	<!-- <script type="text/javascript" src="../jquery.js"></script> -->
+	<script src="https://d3js.org/d3.v3.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.13.0/d3-legend.min.js"></script>
+	<script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
+	<!-- <script src="d3.legend.js"></script> -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/walrus2.ico">
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="assets/css/blog.css">
+	<link rel="stylesheet" type="text/css" href="assets/js/ion.rangeSlider.css">
+	<link rel="stylesheet" type="text/css" href="assets/js/ion.rangeSlider.skinFlat.css">
+
+    <!-- <script src="jquery.js"></script>  -->
+    <script> 
+    $(function(){
+      $("#includedHeader").load("head.html"); 
+      $("#includedFooter").load("footer.html"); 
+    });
+    </script> 
+  </head>
+
+  <body>
+
+    <div id="includedHeader"></div>
+
+	
+	<!-- +++++ Post +++++ -->
+	<div id="white">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="assets/img/user.png" width="5%" height="5%"> <ba>Data Walrus</ba></p>
+					<p><bd>May 18, 2016</bd></p>
+					<h4>I want to believe.</h4>
+					<p>I enjoy reading about early exploration. I’m fascinated by the thought of people finding untouched parts of the world. I’ve always wondered, how would it feel to know that no one has ever experienced a place that you are now experiencing?</p>
+
+					<p>I was left disappointed as I searched for this feeling of discovery in a world that has basically been google mapped by now. Then I realized, there’s an entire universe out there. So, for this post we will be going…</p>
+
+					<p><img class="img-responsive" src="assets/img/Buzz_Lightyear.png" alt=""></p>
+
+					<p>…to infinity and beyond!</p>
+
+					<p>Ok, maybe not to infinity. More so, as far as the Kepler space telescope can reach.</p>
+
+					<p>Let’s take a step back. First off, I’m pretty sure everyone reading this is familiar with a telescope. If not, it’s something that helps us see far distances, and there are many different types. For this discussion, we’ll focus on the Kepler Space telescope. It was launched into space in 2009 with the purpose of discovering planets outside our solar system (a.k.a. “exoplanets”). Observations from the telescope are analyzed using the transit method to determine if an exoplanet exists. This method basically looks at a star and sees if it dims slightly, and determines if it’s due to a planet crossing its path.</p>
+
+					<p>You may be asking, ‘What’s the purpose of all this?’. The main reason is to determine if planets exist that are similar to Earth. If so, there may be life on that planet. It also may be a nice place to vacation for us humans. Kind of like the new Hamptons for the uber rich.</p>
+
+					<p>There are a couple key factors that are used to determine if exoplanets are Earth 2.0. The first is size (turns out that matters). If an exoplanet’s radius is similar to Earth’s radius then it will more likely be a rocky planet. This is in contrast to the larger “gas giant” planets (e.g., Jupiter) that don’t tend to be habitable. The second indicator is the temperature of the planet. Life doesn’t tend to flourish in extremely cold or warm environments. The exoplanet temperature is determined by how close it is to its host star. The type of host star also matters, but we won’t get into that. You basically want an exoplanet that isn’t too close or too far from its host star. This area is commonly referred to as the “goldilocks” or “habitable” zone.</p>
+
+					<p>With this knowledge about exoplanets, I set out for some data. I got some great information from the fine folks at Caltech. They have some really useful data available within their NASA exoplanet archive. For this analysis I looked at the exoplanet’s location using its right ascension and declination, radius relative to earth (earth radii), and temperature (Kelvin). Below is the initial visualization I created using this information. Each dot is an exoplanet, with its size representing the radius, and color being the temperature.</p>
+					<div id="main">
+						<div>
+							
+						</div>
+						<div>
+							<button class="button button2"  onclick="updateData()">
+					                Habitable Zone 
+							</button>
+						</div>
+						<div class="scale-description">
+						Earth Radii
+						</div>
+						<div>
+							<input type="text" id="example_id" class="baby" name="example_name" value="" />
+						</div>
+						<div>
+						</div>
+					</div>
+					
+					<div id="main">
+						<div class="row">
+							<div id="container" class="svg-container">
+								<script type="text/javascript" src="analysis/exoplanet/exoplanet.js"></script>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!-- <p><object width="400" height="400" data="http://thedatawalrus.github.io/exoplanet.html"></object></p> -->
+					<!-- <img class="img-responsive" src="assets/img/exoplanet21.png" alt=""> -->
+
+					<p>Do you notice how the alignment of exoplanets looks like a grid? That’s because the Kepler camera looks like this…</p>
+
+					<p><img class="img-responsive" src="assets/img/Keplerspacecraft-FocalPlane-cutout.svg" alt=""></p>
+
+					<p>This visualization is a great way to understand how many exoplanets have been discovered and confirmed by the Kepler mission, but it doesn’t get us to our end goal. We are really interested in filtering this list down to find another Earth. Let’s start by keeping only exoplanets in the habitable zone (temperatures between 180 and 310 kelvin).</p>
+
+					<p><img class="img-responsive" src="assets/img/habitable.png" alt=""></p>
+
+					<p>Awesome! We now have a more manageable group of planets. Here we’re looking for exoplanets that are light purple (periwinkle?) because those are close to Earth’s temperature of approximately 270 degrees kelvin.</p>
+
+					<p>This is all well and good, but we still have some pretty large exoplanets in that group. So I’ve used the radius slider to filter for exoplanets that are no larger than twice the size of earth.</p>
+
+					<p><img class="img-responsive" src="assets/img/habitable_2_earth.png" alt=""></p>
+
+					<p>Wow, that really narrows things down. We went from over 2,000 exoplanets to just a handful. We’re now able to see there are just a few exoplanets around the temperature and size of Earth. Some of these exoplanets are tidally locked, though. This occurs when one hemisphere of the exoplanet constantly faces the host star, which leads to extreme temperatures on each hemisphere but still having an overall temperature within the habitable zone. Based on all this, I’m putting my money on Kepler 442b. It is very close to Earth’s size and temperature while not tidally locked. I’ll see you guys there in 1,120 light years!</p>
+
+					<p>-The Data Walrus</p>
+
+					<p>P.S. I also wanted to quickly note these exoplanets are just among what’s been discovered by the Kepler mission since 2009. There are billions of stars in our galaxy, which may each have their own orbiting planets. When you take into account there are billions of galaxies in our universe then the chance of another Earth-like planet with life existing seems, to me, more than likely.</p>
+
+					 
+
+					<p>Notes on visualization</p>
+
+					<p>-I tried to put everything under the sun in this visualization (pun slightly intended). Having all this data can cause the visualization to run slow on mobile. Using a delay in the d3 transitions helped.</p>
+
+					<p>-Color legends can be difficult (thanks, d3 legend library!)</p>
+					<!-- <br>
+					<p><bt>TAGS: <a href="#">Wordpress</a> - <a href="#">Web Design</a></bt></p>
+					<hr> -->
+					<p><a href="index.html"># Back</a></p>
+
+					<div id="disqus_thread"></div>
+					<script>
+
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+					var disqus_config = function () {
+					this.page.url = www.datawalrus.co/exoplanet_post.html;  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = exoplanet; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://datawalrus.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /white -->
+	
+	
+	
+	
+	<div id="includedFooter"></div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

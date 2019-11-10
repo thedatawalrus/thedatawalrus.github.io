@@ -1,0 +1,385 @@
+#main {
+    /*width: 40%;*/
+    /*height: 50%;*/
+    /*border: 1px solid black; */
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    /*align-items: center;*/
+}
+#main div:nth-of-type(1) {flex-grow: 1;}
+#main div:nth-of-type(2) {flex-grow: 3;}
+#main div:nth-of-type(3) {flex-grow: .75;}
+#main div:nth-of-type(4) {flex-grow: 5;}
+#main div:nth-of-type(5) {flex-grow: 5;}
+
+#main div {
+   -webkit-flex: 1; /* Safari 6.1+ */
+   flex: 1;
+}
+
+.scale-description {
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 55%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content {
+    transform: translateZ(0);
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.viztooltip {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.legend {
+    font-size: 12px;
+  }
+  rect {
+    stroke-width: 2;
+  }
+
+/*div.tooltip {
+    display: none;
+}*/
+
+div.viztooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: normal;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #393b79;
+}
+.legendQuant {
+    font-family: sans-serif;
+    font-size: 14px;
+ /* font-family: Georgia, "Cambria", serif;
+    color: #444;*/
+    /*font-size: 14px;*/
+    /*font-weight: bold;}*/
+
+.legendQuantHab {
+    font-family: sans-serif;
+    font-size: 14px;
+    /*font-weight: bold;}*/
+
+/*.button2:focus {
+    background-color: #3399CC;
+    color: white;
+}*/
+/*.button2:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}*/
+
+.home-menu {
+    padding: 0.5em;
+    /*text-align: center;*/
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    margin:0;
+}
+.home-menu {
+    background: black;
+}
+.pure-menu.pure-menu-fixed {
+   z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    /*height: 88%;*/
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.home-menu .pure-menu-heading {
+    font-family: Helvetica;
+    color: white;
+    font-weight: 100;
+    font-size: 200%;
+    text-align: left;
+    font-variant: small-caps;
+    position: relative;
+    top: 20px;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+
+.splash-container {
+    /*background: #1f8dd6;*/
+    z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 88%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+    color: white;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#layout {
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+    background: rgb(61, 79, 93);
+    color: #fff;
+}
+
+.brand-title,
+.brand-tagline {
+    margin: 0;
+}
+.brand-title {
+    text-transform: uppercase;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.content-subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.content {
+    padding: 2em 1em 0;
+    margin: 5em auto;
+}
+
+.post {
+    padding-bottom: 2em;
+}
+.post-title {
+    font-family: Arial, "Cambria", serif;
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+.post-description {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+    .post-category-design {
+        background: #5aba59;
+    }
+    .post-category-pure {
+        background: #4d85d1;
+    }
+    .post-category-yui {
+        background: #8156a7;
+    }
+    .post-category-js {
+        background: #df2d4f;
+    }
+
+.post-images {
+    margin: 1em 0;
+}
+.post-image-meta {
+    margin-top: -3.5em;
+    margin-left: 1em;
+    color: #fff;
+    text-shadow: 0 1px 1px #333;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+}
+.footer a {
+    color: #ccc;
+    font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+    background: none;
+}
+
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 15%;
+    }
+
+    .header {
+        margin: 80% 2em 0;
+        text-align: right;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+}

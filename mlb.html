@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109021571-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109021571-1');
+	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/walrus2.ico">
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
+
+    <title>Data Walrus - MLB</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script> 
+    $(function(){
+      $("#includedHeader").load("head.html"); 
+      $("#includedFooter").load("footer.html"); 
+    });
+    </script> 
+  </head>
+
+  <body>
+
+    <div id="includedHeader"></div>
+
+	
+	<!-- +++++ Post +++++ -->
+	<div id="white">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="assets/img/user.png" width="5%" height="5%"> <ba>Data Walrus</ba></p>
+					<p><bd>October 24, 2017</bd></p>
+					<h4>Take me out to the ball game</h4>
+					<p>So, I’m a big baseball fan. Not a huge fan in the sense that I’ll watch it daily (anymore), but more so in the sense that I admire the strategy and complexity of the sport. Oh, and I’m a fan of all the analytics. Baseball has so many data points that it can get overwhelming (WAR, what is it good for? A lot of things, evidently). That said, I finally got my hands on some great MLB data and decided to take a look at the 2017 season on the eve of the World Series.</p>
+					<p>I wanted to create a visualization that clearly showed the progress of the season. The questions I wanted to answer were:</p>
+					<ol>
+						<li>On what days were the postseason teams in their eventual season end position?</li>
+						<li>How did the team standings compare throughout the season?</li>
+					</ol>
+					<p>To do this I turned to Tableau to create an animation. This animation shows the progress of teams throughout the regular season. The GIF (I’m saying this with a hard ‘G’ in my head) below has two visualizations that answer the questions above. The blue and red charts answer my first question. It shows a blue mark if the team(s) who ended up as that division/wildcard leader(s) were in their spot on that day, and red if not. For example, if the Houston Astros (AL West division champs) were in first place at any point then there would be a blue mark for the AL West on that day.  The next set of charts answers my second question by showing the games behind the division leader for each division. The leader will be at that top (zero games behind) and the farthest team behind will be at the bottom.</p>
+					<p><img class="img-responsive" src="assets/img/mlb.gif" alt=""></p>
+					<p>These visualizations bring some interesting insights. First, some divisions were clearly dominated by one team. Most notably, the Nationals and Astros were in first place early on and never wavered. The Dodgers also got ahead by a lot and stayed there for a bulk of the season. It’s not so surprising that the Dodgers and Astros will be facing off in the World Series, I guess.</p>
+					<p>Second, the AL East and NL Central were very close for most of the season. The AL Central was also a battle early on, but the Indians soon pulled ahead (I guess that’s what happens when you win 22 straight games).</p>
+					<p>Last, but not least, the postseason teams were decided well before the end of the season. All the postseason teams aligned first in early August and were set by early September, that’s a whole one and two months before the end of the season, respectively. This is only one season’s worth of data, but it kind of begs the question – do we really need 162 games? This question might be something to look into on a later post.</p>
+					<!-- <br>
+					<p><bt>TAGS: <a href="#">Wordpress</a> - <a href="#">Web Design</a></bt></p>
+					<hr> -->
+					<p><a href="index.html"># Back</a></p>
+
+					<div id="disqus_thread"></div>
+					<script>
+
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+					var disqus_config = function () {
+					this.page.url = www.datawalrus.co/mlb.html;  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = mlb; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://datawalrus.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /white -->
+	
+
+	
+	<div id="includedFooter"></div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

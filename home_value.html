@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109021571-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109021571-1');
+	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/walrus2.ico">
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
+
+    <title>Data Walrus - House Hunters</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script> 
+    $(function(){
+      $("#includedHeader").load("head.html"); 
+      $("#includedFooter").load("footer.html"); 
+    });
+    </script> 
+  </head>
+
+  <body>
+
+    <div id="includedHeader"></div>
+
+	
+	<!-- +++++ Post +++++ -->
+	<div id="white">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="assets/img/user.png" width="5%" height="5%"> <ba>Data Walrus</ba></p>
+					<p><bd>December 22, 2017</bd></p>
+					<h4>House hunters</h4>
+					<p>I recently stumbled upon some great housing data from <a href = https://www.zillow.com/research/data/> zillow </a>and decided to play around with it. I was interested to see how much home values have historically changed. With that, I started to put together a visualization that highlighted the year over year percent change in price per square foot (ppsf) by zip code (adjusted for inflation). The visualization also shows how the median ppsf compares to the S&P 500 during the same period. I used Tableau to create an animation of this progression over the last 20 years</p>
+					
+					<p><img class="img-responsive" src="assets/img/home_value.gif" alt=""></p>
+					<p>Each bubble on the map is a specific zip code. These bubbles will be larger if they have a high population. For the percent change I compared the ppsf of a month to the previous year's ppsf of the same month. The bubble will be a darker green/blue (aqua?) if there is a high percentage increase and a darker red if there is a large percentage decrease. Finally, I added a scrolling line chart at the bottom to show the median ppsf in the US over time, as well as the S&P 500 as an index.</p>
+					
+					<p>There were some cool insights that came about from this visualization. Most insights were releated to the decline in home values around 2008 due to the housing market crash. Specifically, when the housing crash started it took some time for other markets to be affected. The housing crisis starts around the summer of 2007, but the S&P 500 doesn't start its sharp decline until a year later. 
+					
+					<p>It's also interesting to see where in the country the early signs of the housing crisis appeared. Most notably, we see a lot of red around the Midwest as early as 2006.</p>
+					
+					<p>This visualization also helps highlight how home values tend to appreciate. Over this 20-year period many of the months show the map covered in green/blue (aqua? teal?). It is important to note that the housing crash left much room for growth, but the market could have leveled off or continued its decline. Instead, the housing market turned around realtively quickly and is now near its pre-crash levels.</p>
+					<p>All and all, it will be interesting to see what the next few years hold in store for the housing market. In the meantime I'm going to hop in a time machine and buy a house in 2012.</p>
+					<!-- <br>
+					<p><bt>TAGS: <a href="#">Wordpress</a> - <a href="#">Web Design</a></bt></p>
+					<hr> -->
+					<p><a href="index.html"># Back</a></p>
+
+					<div id="disqus_thread"></div>
+					<script>
+
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+					var disqus_config = function () {
+					this.page.url = www.datawalrus.co/home_value.html;  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = home_value; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://datawalrus.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /white -->
+	
+
+	
+	<div id="includedFooter"></div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
