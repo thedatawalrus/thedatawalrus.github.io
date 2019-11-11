@@ -48,7 +48,7 @@ var yAxisPlot = d3.svg.axis()
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-d3.json("./ncaa_export.json", function(error, data) {
+d3.json("analysis/ncaa/ncaa_export.json", function(error, data) {
   if (error) throw error;
 
 

@@ -46,7 +46,7 @@
               .style("opacity", 0);
 
 
-d3.json("./ncaa_dist.json", function(error, data) {
+d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
   if (error) throw error;
 
  			var xAxis = d3.svg.axis()
