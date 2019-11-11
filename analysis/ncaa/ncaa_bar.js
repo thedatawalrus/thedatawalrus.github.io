@@ -23,18 +23,6 @@
 			    w = 960 - margin.left - margin.right,
 			    h = 500 - margin.top - margin.bottom;
 
-			
-			var xAxis = d3.svg.axis()
-			    .scale(xScale)
-			    // .ticks(5)
-			    .orient("bottom");
-
-
-			var yAxis = d3.svg.axis()
-			// .tickSize(-10)
-			    .scale(yScale)
-			    .orient("left")
-			    .tickFormat(formatPercent);
 
 			//Create SVG element
 			// var svg = d3.select("div#containerBar")
@@ -60,6 +48,18 @@
 
 d3.json("ncaa_dist.json", function(error, data) {
   if (error) throw error;
+
+ 			var xAxis = d3.svg.axis()
+			    .scale(xScale)
+			    // .ticks(5)
+			    .orient("bottom");
+
+
+			var yAxis = d3.svg.axis()
+			// .tickSize(-10)
+			    .scale(yScale)
+			    .orient("left")
+			    .tickFormat(formatPercent);
 
 			var xScale = d3.scale.ordinal()
 							.domain(d3.range(1,data.SecondRound.length+1))
