@@ -62,16 +62,16 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 			    .tickFormat(formatPercent);
 
 			var xScale = d3.scale.ordinal()
-							.domain(d3.range(1,data.SecondRound.length+1))
+							.domain(d3.range(1,data.data.SecondRound.length+1))
 							.rangeBands([0, w], 0.4);
 
 			var yScale = d3.scale.linear()
-							.domain([0,d3.max(data.SecondRound, function(d) { return +d.Percent; })])
+							.domain([0,d3.max(data.data.SecondRound, function(d) { return +d.Percent; })])
 							// .domain([0,1])
 							.range([h, 0]);
 
   			var color = d3.scale.linear()
-              .domain(d3.range(data.SecondRound.length))
+              .domain(d3.range(data.data.SecondRound.length))
               .range(["#74363E","#643F4B"])
               ;
 
@@ -102,7 +102,7 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 
 			//Create bars
 			svg.selectAll("rect")
-			   .data(data.SecondRound)
+			   .data(data.data.SecondRound)
 			   .enter()
 			   .append("rect")
 			   .attr("x", function(d) {
@@ -211,20 +211,20 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 					var data;
 
 					if(round == "Second Round"){
-						data = data.SecondRound;
+						data = data.data.SecondRound;
 					}else if(round == "Sweet 16"){
-						data = data.Sweet16;
+						data = data.data.Sweet16;
 					}else if(round == "Elite Eight"){
-						data = data.EliteEight;
+						data = data.data.EliteEight;
 					}else if(round == "Final Four"){
-						data = data.FinalFour;
+						data = data.data.FinalFour;
 					}else{
-						data = data.NationalChampionship;
+						data = data.data.NationalChampionship;
 					}
 
 
 
-					xScale.domain(d3.range(1, data.length+1));
+					xScale.domain(d3.range(1, data.data.length+1));
 
 					yScale.domain([0,d3.max(data, function(d) { return +d.Percent; })]);
 
