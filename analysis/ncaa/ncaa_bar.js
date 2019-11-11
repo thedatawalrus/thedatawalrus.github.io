@@ -1,16 +1,16 @@
-			// var dataset = (function () {
-			//     var json = null;
-			//     $.ajax({
-			//         'async': false,
-			//         'global': false,
-			//         'url': "ncaa_dist.json",
-			//         'dataType': "json",
-			//         'success': function (data) {
-			//           json = data;
-			//         }
-			//     });
-			//     return json;
-			// })(); 
+			var dataset = (function () {
+			    var json = null;
+			    $.ajax({
+			        'async': false,
+			        'global': false,
+			        'url': "analysis/ncaa/ncaa_dist.json",
+			        'dataType': "json",
+			        'success': function (data) {
+			          json = data;
+			        }
+			    });
+			    return json;
+			})(); 
 
 			
 
@@ -23,6 +23,26 @@
 			    w = 960 - margin.left - margin.right,
 			    h = 500 - margin.top - margin.bottom;
 
+			var xScale = d3.scale.ordinal()
+							.domain(d3.range(1,dataset.data.SecondRound.length+1))
+							.rangeBands([0, w], 0.4);
+
+			var yScale = d3.scale.linear()
+							.domain([0,d3.max(dataset.data.SecondRound, function(d) { return +d.Percent; })])
+							// .domain([0,1])
+							.range([h, 0]);
+			
+			var xAxis = d3.svg.axis()
+			    .scale(xScale)
+			    // .ticks(5)
+			    .orient("bottom");
+
+
+			var yAxis = d3.svg.axis()
+			// .tickSize(-10)
+			    .scale(yScale)
+			    .orient("left")
+			    .tickFormat(formatPercent);
 
 			//Create SVG element
 			// var svg = d3.select("div#containerBar")
@@ -39,41 +59,15 @@
 			.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+			var color = d3.scale.linear()
+              .domain(d3.range(dataset.data.SecondRound.length))
+              .range(["#74363E","#643F4B"])
+              ;
 
 
 			var div = d3.select("body").append("div") 
               .attr("class", "viztooltip")        
               .style("opacity", 0);
-
-
-d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
-  if (error) throw error;
-
-			var xScale = d3.scale.ordinal()
-							.domain(d3.range(1,data.data.SecondRound.length+1))
-							.rangeBands([0, w], 0.4);
-
-			var yScale = d3.scale.linear()
-							.domain([0,d3.max(data.data.SecondRound, function(d) { return +d.Percent; })])
-							// .domain([0,1])
-							.range([h, 0]);
-
-  			var color = d3.scale.linear()
-              .domain(d3.range(data.data.SecondRound.length))
-              .range(["#74363E","#643F4B"])
-              ;
-
- 			var xAxis = d3.svg.axis()
-			    .scale(xScale)
-			    // .ticks(5)
-			    .orient("bottom");
-
-
-			var yAxis = d3.svg.axis()
-			// .tickSize(-10)
-			    .scale(yScale)
-			    .orient("left")
-			    .tickFormat(formatPercent);
 
 
 		  svg.append("g")
@@ -102,7 +96,7 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 
 			//Create bars
 			svg.selectAll("rect")
-			   .data(data.data.SecondRound)
+			   .data(dataset.data.SecondRound)
 			   .enter()
 			   .append("rect")
 			   .attr("x", function(d) {
@@ -208,23 +202,23 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 
 					var round = this.getAttribute("value");
 
-					var data.data;
+					var data;
 
 					if(round == "Second Round"){
-						data.data = data.data.SecondRound;
+						data = dataset.data.SecondRound;
 					}else if(round == "Sweet 16"){
-						data.data = data.data.Sweet16;
+						data = dataset.data.Sweet16;
 					}else if(round == "Elite Eight"){
-						data.data = data.data.EliteEight;
+						data = dataset.data.EliteEight;
 					}else if(round == "Final Four"){
-						data.data = data.data.FinalFour;
+						data = dataset.data.FinalFour;
 					}else{
-						data.data = data.data.NationalChampionship;
+						data = dataset.data.NationalChampionship;
 					}
 
 
 
-					xScale.domain(d3.range(1, data.data.length+1));
+					xScale.domain(d3.range(1, data.length+1));
 
 					yScale.domain([0,d3.max(data, function(d) { return +d.Percent; })]);
 
@@ -360,5 +354,4 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 					   .call(yAxis);
 
 					   				
-				})
-		});
+				});
