@@ -211,15 +211,15 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 					var data;
 
 					if(round == "Second Round"){
-						data = data.data.SecondRound;
+						data = data.SecondRound;
 					}else if(round == "Sweet 16"){
-						data = data.data.Sweet16;
+						data = data.Sweet16;
 					}else if(round == "Elite Eight"){
-						data = data.data.EliteEight;
+						data = data.EliteEight;
 					}else if(round == "Final Four"){
-						data = data.data.FinalFour;
+						data = data.FinalFour;
 					}else{
-						data = data.data.NationalChampionship;
+						data = data.NationalChampionship;
 					}
 
 
