@@ -208,23 +208,23 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
 
 					var round = this.getAttribute("value");
 
-					var data;
+					var data.data;
 
 					if(round == "Second Round"){
-						data = data.data.SecondRound;
+						data.data = data.data.SecondRound;
 					}else if(round == "Sweet 16"){
-						data = data.data.Sweet16;
+						data.data = data.data.Sweet16;
 					}else if(round == "Elite Eight"){
-						data = data.data.EliteEight;
+						data.data = data.data.EliteEight;
 					}else if(round == "Final Four"){
-						data = data.data.FinalFour;
+						data.data = data.data.FinalFour;
 					}else{
-						data = data.data.NationalChampionship;
+						data.data = data.data.NationalChampionship;
 					}
 
 
 
-					xScale.domain(d3.range(1, data.length+1));
+					xScale.domain(d3.range(1, data.data.length+1));
 
 					yScale.domain([0,d3.max(data, function(d) { return +d.Percent; })]);
 
