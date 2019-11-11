@@ -49,18 +49,6 @@
 d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
   if (error) throw error;
 
- 			var xAxis = d3.svg.axis()
-			    .scale(xScale)
-			    // .ticks(5)
-			    .orient("bottom");
-
-
-			var yAxis = d3.svg.axis()
-			// .tickSize(-10)
-			    .scale(yScale)
-			    .orient("left")
-			    .tickFormat(formatPercent);
-
 			var xScale = d3.scale.ordinal()
 							.domain(d3.range(1,data.data.SecondRound.length+1))
 							.rangeBands([0, w], 0.4);
@@ -74,6 +62,18 @@ d3.json("analysis/ncaa/ncaa_dist.json", function(error, data) {
               .domain(d3.range(data.data.SecondRound.length))
               .range(["#74363E","#643F4B"])
               ;
+
+ 			var xAxis = d3.svg.axis()
+			    .scale(xScale)
+			    // .ticks(5)
+			    .orient("bottom");
+
+
+			var yAxis = d3.svg.axis()
+			// .tickSize(-10)
+			    .scale(yScale)
+			    .orient("left")
+			    .tickFormat(formatPercent);
 
 
 		  svg.append("g")
