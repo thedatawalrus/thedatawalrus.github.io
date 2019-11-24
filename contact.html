@@ -28,6 +28,7 @@
     <link href="assets/css/main.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/hover.zoom.js"></script>
     <script src="assets/js/hover.zoom.conf.js"></script>
     <script src="//www.powr.io/powr.js?external-type=html"></script>
@@ -53,49 +54,69 @@
 	<!-- +++++ Contact Section +++++ -->
 	
 	<div class="container pt">
-		<div class="row mt-contact">
-			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>CONTACT ME</h3>
-				<hr>
-				<!-- <p>Send me a message!</p> -->
-			</div>
-		</div>
-		<div class="row mt-contact">	
-			<!-- <div class="col-lg-8 col-lg-offset-2">
-				<form method="POST" action="http://formspree.io/datawalrus@gmail.com">
-				  <div class="form-group">
-				    <input type="name" class="form-control" id="NameInputEmail1" placeholder="Your Name">
-				    <br>
-				  </div>
-				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-				    <br>
-				  </div>
-				  <div class="form-group">
-				    <input type="name" class="form-control" id="subjectEmail1" placeholder="Subject">
-				    <br>
-				  </div>
-				  <textarea class="form-control" rows="6" placeholder="Enter your text here"></textarea>
-				    <br>
-				  <button type="submit" class="btn btn-success">SUBMIT</button>
-				</form>    			 -->
- 
-				<div class="powr-form-builder" id="697f00da_1510513702"></div>
+			<div class="row mt">
+				<div class="col-lg-6 col-lg-offset-3 centered">
+					<h3>CONTACT ME</h3>
+					<hr>
 
-				<!-- Do not change the code! -->
-				<!-- <a id="foxyform_embed_link_907410" href="http://www.foxyform.com/">foxyform</a>
-				<script type="text/javascript">
-				(function(d, t){
-				   var g = d.createElement(t),
-				       s = d.getElementsByTagName(t)[0];
-				   g.src = "http://www.foxyform.com/js.php?id=907410&sec_hash=d70573b57b7&width=350px";
-				   s.parentNode.insertBefore(g, s);
-				}(document, "script"));
-				</script> -->
-<!-- Do not change the code! -->
+				</div>
 			</div>
-		</div><!-- /row -->
-	</div><!-- /container -->
+			<div class="row mt">	
+				<div class="col-lg-8 col-lg-offset-2">
+					<!-- <form role="form" action="" method="post">
+					{% csrf_token %}
+					  <div class="form-group">
+					    {{ form.contact_name }}
+					    <br>
+					  </div>
+					  <div class="form-group">
+					    {{ form.contact_email }}
+					    <br>
+					  </div>
+					  <div class="form-group">
+					    {{ form.subject }}
+					    <br>
+					  </div>
+					  	{{ form.content }}
+					    <br>
+					  <button type="submit" class="btn btn-success">Submit</button>
+					</form>    			 -->
+					<form id="contact-form" action="#">
+							<div class="form-group">
+								<!-- <label for="name">Name</label> -->
+								<input type="text" class="form-control" id="name" placeholder="Name">
+							</div>
+							<div id="nameAlert" class="alert alert-warning hidden" role="alert">
+							  Name cannot be less than two characters
+							</div>
+							<div class="form-group">
+								<!-- <label for="name">Email</label> -->
+								<input type="text" class="form-control" id="email" placeholder="Email">
+							</div>
+							<div id="emailAlert" class="alert alert-warning hidden" role="alert">
+							  Please enter your email
+							</div>
+							<div id="emailValidAlert" class="alert alert-warning hidden" role="alert">
+							  Please enter a valid email address
+							</div>
+							<div class="form-group">
+								<!-- <label for="name">Phone</label> -->
+								<input type="tel" class="form-control" id="phone" placeholder="Phone">
+							</div>
+							<div class="form-group">
+								<!-- <label for="message"></label> -->
+								<textarea name="" id="message" cols="30" rows="10" class="form-control" placeholder="Enter your message here"></textarea>
+							</div>
+							<div class="form-group">
+								<button name="data" type="button" class="btn btn-success" onclick="submitToAPI()">Send Message</button>
+							</div>
+							<div id="successAlert" class="alert alert-success hidden" role="alert">
+							  Thanks for your message!
+							</div>
+					</form>
+				</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
 	
 	
 	<div id="includedFooter"></div>
