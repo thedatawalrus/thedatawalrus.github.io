@@ -82,6 +82,9 @@
 					  <button type="submit" class="btn btn-success">Submit</button>
 					</form>    			 -->
 					<form id="contact-form" action="#">
+							<div id="successAlert" class="alert alert-success hidden" role="alert">
+							  Thanks for your message!
+							</div>
 							<div class="form-group">
 								<!-- <label for="name">Name</label> -->
 								<input type="text" class="form-control" id="name" placeholder="Name">
@@ -109,9 +112,6 @@
 							</div>
 							<div class="form-group">
 								<button name="data" type="button" class="btn btn-success" onclick="submitToAPI()">Send Message</button>
-							</div>
-							<div id="successAlert" class="alert alert-success hidden" role="alert">
-							  Thanks for your message!
 							</div>
 					</form>
 				</div>
