@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109021571-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109021571-1');
+	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/walrus2.ico">
+    <!-- <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"> -->
+
+    <title>Data Walrus - It's the economy...</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script> 
+    $(function(){
+      $("#includedHeader").load("head.html"); 
+      $("#includedFooter").load("footer.html"); 
+    });
+    </script> 
+  </head>
+
+  <body>
+
+    <div id="includedHeader"></div>
+
+	
+	<!-- +++++ Post +++++ -->
+	<div id="white">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="assets/img/user.png" width="5%" height="5%"> <ba>Data Walrus</ba></p>
+					<p><bd>December 19, 2019</bd></p>
+					<h4>It's the economy...</h4>
+					<p>For this post I'm going to dive into a risky area....US politics! Well, more specifically, the performance of the economy and how it relates to politics.</p>
+
+					<p>Unless you've been living under a rock, you may have noticed the US political climate has been quite heated (maybe that's what's melting the polar caps?). A big talking point in politics is, and always has been, the economy. Our current President has repeatedly pointed to the economy as a measure of his success. His supporters also talk about the growth of their 401k under his administration. It's true, the US economy is doing well, specifically, the market is at all time highs. But all this got me thinking - how much credit can a President take for the economy, especially in their first term? I turned to the data to try to find out. </p>
+
+					<p>For this analysis I used S&P 500 data from 2009 to now as an indicator of economic prosperity. Now, the market is not the economy. To say they are the same thing is like calling your tire a car. It's only one part of a big machine. But still, it's a good indicator. My objective was simple, I wanted to try to model out the S&P 500 using the eight years Obama was in office and compare that to the actual performance under Trump. My hypothesis was that the market has performed well under Trump, but it is more or less on the same trajectory it was on when he took office.</p>
+
+					<p><img class="img-responsive" src="assets/img/economy.png" alt=""></p>
+
+					<p>You can see above the S&P 500 total return under Obama (blue) and under Trump (red). There is also a forecast in gray that uses the eight years of Obama data. The shaded area shows where we'd expect to see the S&P 500 based on this data, with 90% confidence.</p>
+
+					<p>Now, the market is not the easiest thing to model. If it were, then everyone would be rich. So, this forecast does have to be taken with a grain of salt. I am not saying this would definitely be the outcome, more so, this would be the outcome if the market followed the same growth under Obama. Using this data I could see that the market was indeed in line with this forecast. All this does make you wonder how much credit can Trump take for the market success and how much was inherited growth? It's hard to say.</p>
+
+					<p>I just want to emphasize again. Economical models are hard to build, and I am by no means an economist. I am just using old data to build a trend, that's all. No one knows what would have happened if Obama remained President during this time period. He might have bought Greenland.</p>
+
+					<p>-DW</p>
+					<!-- <br>
+					<p><bt>TAGS: <a href="#">Wordpress</a> - <a href="#">Web Design</a></bt></p>
+					<hr> -->
+					<p><a href="index.html"># Back</a></p>
+
+					<div id="disqus_thread"></div>
+					<script>
+
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+					var disqus_config = function () {
+					this.page.url = 'http://www.datawalrus.com/economy.html';  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = 'economy'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					this.page.title = 'Data Walrus - The Economy';
+					};
+
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = 'https://datawalrus.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /white -->
+	
+
+	
+	<div id="includedFooter"></div>
+	
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
